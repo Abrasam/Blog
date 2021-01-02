@@ -17,4 +17,4 @@ The UI looks like this, the default settings which were used to generate the abo
 You might have noticed the "Animate" button and various animation settings, indeed it can generate animations and it would be remiss of me not to show you one!
 ![A procedurally generated pixelart tree animation.](/blog/images/treegenerator/tree.gif =512x "Tree Animation")
 
-The project can be downloaded [here](https://github.com/Abrasam/Tools/tree/main/treegenerator) and depends on [Pillow](https://pillow.readthedocs.io/en/latest/installation.html). It is released under the Apache v2.0 license.
+The project can be downloaded [here](https://github.com/Abrasam/Tools/tree/main/treegenerator).
