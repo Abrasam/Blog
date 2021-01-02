@@ -2,7 +2,7 @@
 title: Pixelart Tree Generator
 date: 02/01/2021
 
-This project is from about 18 months ago but as I wanted to put someting on the blog so here goes!
+*This project is from about 18 months ago but as I wanted to put someting on the blog so here goes!*
 
 I was working on a little survival game and while populate my little 2D world with fauna I wondered if anyone had written a good algorithm for creating tree art. It's a well-understood biological process so I thought it would be easy enough to emulate (especially given how much programmers love trees!)
 
