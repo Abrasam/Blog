@@ -1,5 +1,0 @@
-title: I Have a Blog
-author: Sam
-date: 2020/01/02
-
-I have started this blog so I can document my hobby projects (mostly game development/simulation stuff). I doubt anyone will read it but this is mostly for my own records (and to flex to friends).
