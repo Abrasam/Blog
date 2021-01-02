@@ -8,13 +8,16 @@ I was working on a little survival game and while populate my little 2D world wi
 
 After a little digging I found [this Reddit post](https://www.reddit.com/r/proceduralgeneration/comments/e4jzrw/pixel_art_tree_generator/), I played around with their generator but wanted to make my own. They put the source code behind a paywall so I kept searching and came across [this animation](https://twitter.com/Thalanor/status/896692863274287105), showing how [these trees](https://twitter.com/Thalanor/status/902901617279864832) were generated. This gave me enough to work with.
 
-I set about making my program in Python, with a little Tkinter interface. The algorithm works by growing the tree from the root, emulating nature and following a similar process to the animation above. There is then a random chance of branching, splitting, etc. as well as a number of parameters to control the depth of branches, the width by which the trunk changes each step and the amount of leaves to draw. The result is a beautiful little tree like this.
+I set about making my program in Python, with a little Tkinter interface. The algorithm works by growing the tree from the root, emulating nature and following a similar process to the animation above. There is then a random chance of branching, splitting, etc. as well as a number of parameters to control the depth of branches, the width by which the trunk changes each step and the amount of leaves to draw. The result is a happy little tree like this.
+
 ![A procedurally generated pixelart tree.](/blog/images/treegenerator/tree.png =512x "Tree Texture")
 
 The UI looks like this, the default settings which were used to generate the above tree are also shown in the screenshot.
+
 ![Tree generator screenshot.](/blog/images/treegenerator/treegenerator.png =800x "Tree Generator")
 
 You might have noticed the "Animate" button and various animation settings, indeed it can generate animations and it would be remiss of me not to show you one!
+
 ![A procedurally generated pixelart tree animation.](/blog/images/treegenerator/tree.gif =512x "Tree Animation")
 
 The project can be downloaded [here](https://github.com/Abrasam/Tools/tree/main/treegenerator).
