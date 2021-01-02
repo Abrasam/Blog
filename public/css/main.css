@@ -83,7 +83,7 @@ body > header {
 	line-height: 180px;
 	margin-bottom: 20px;
 }
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h6 {
   display: inline;
   margin: 0;
   font-weight: 600;
@@ -91,7 +91,7 @@ h1, h2, h3, h4 {
 ul, li {
   list-style-type: none;
 }
-code {
+pre code {
   font-family: 'Anonymous Pro', 'Bitstream Vera Sans', 'Monaco', Courier, mono;
 }
 pre {

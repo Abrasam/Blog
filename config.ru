@@ -25,8 +25,7 @@ toto = Toto::Server.new do
   # set :summary,   :max => 150, :delim => /~/                # length of article summary and delimiter
   # set :ext,       'txt'                                     # file extension for articles
   # set :cache,      28800                                    # cache duration, in seconds
-  # set :url, "http://samsga.me/devlog"
-  # set :root, "blog"
+  set :url, "https://samsga.me/blog"
    set :prefix, "blog/"
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
