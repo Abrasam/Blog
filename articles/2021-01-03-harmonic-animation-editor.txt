@@ -1,0 +1,22 @@
+---
+title: Harmonic Animation Editor
+date: 03/01/2021
+
+I was working on a survival game which used hand-drawn art assets. I wanted to animate these art assets in a similar way to the game [One Hour One Life](http://onehouronelife.com/) which also uses hand-drawn art.
+
+The creator of One Hour One Life, Jason Rohrer, demonstrated his animation editor in a [YouTube video](https://www.youtube.com/watch?v=27cztry-gJQ). I set about creating a similar tool which outputs a spritesheet which could be used to draw the animation.
+
+First I draw the object to be animated in parts like so:
+
+![Parts of a robot dog drawn on paper.](/blog/images/animator/robodog.png "Robot Dog Parts")
+
+Then you import it into the animator software, you then select each part which you wish to animate separately, setting the origin of rotation for each part also. Once you've selected all the parts you can build your animation. You add parts to the animation in hierarchy, each object will inherit its parent's transformations. You can edit the oscillations in rotation and translation of each part using the sliders on the left and once you're ready click "Animate" to test. Once you've tweaked your animation you can export it.
+
+The final result is a nice smooth animation!
+
+![Animated robot dog.](/blog/images/animator/robodogwalk.gif "Robot Dog Walk")
+
+Here's a little video of the full process:
+<iframe src="/videos/animator.mp4" width="800px" height="450px"></iframe>
+
+The project is available [here](https://github.com/Abrasam/Animator).
