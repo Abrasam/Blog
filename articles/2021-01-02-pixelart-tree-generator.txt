@@ -4,7 +4,7 @@ date: 02/01/2021
 
 *This project is from about 18 months ago but I wanted to put someting on the blog so here goes!*
 
-I was working on a little survival game and while populate my little 2D world with fauna I wondered if anyone had written a good algorithm for creating tree art. It's a well-understood biological process so I thought it would be easy enough to emulate (especially given how much programmers love trees!)
+I was working on a little survival game and while populate my little 2D world with fauna I wondered if anyone had written a good algorithm for creating tree art. It's a well-understood biological process so I thought it would be easy enough to emulate (especially given how much programmers love trees!).
 
 After a little digging I found [this Reddit post](https://www.reddit.com/r/proceduralgeneration/comments/e4jzrw/pixel_art_tree_generator/), I played around with their generator but wanted to make my own. They put the source code behind a paywall so I kept searching and came across [this animation](https://twitter.com/Thalanor/status/896692863274287105), showing how [these trees](https://twitter.com/Thalanor/status/902901617279864832) were generated. This gave me enough to work with.
 
