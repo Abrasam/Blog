@@ -1,0 +1,39 @@
+---
+title: Civilisation Sim
+date: 30/01/2021
+
+I was in need of a new lockdown project and have recently been playing a number of simulator games like Kingdoms and Castles, Cities: Skylines and the like. I thought, why not make my own?
+
+I thought in my sim I'd create an anarchic, [communalist](https://en.wikipedia.org/wiki/Communalism) society, the player will have little input over the world and will instead spawn a community and watch it develop. Very much a simulator, not really a game I guess!
+
+However, before I get into all that fancy AI stuff I need to first create a world and build the frameworks I'll need for my simulator.
+
+I decided I'd use a simple, 2D grid-based world - something more complicated seems unnecessary. And I'd use a version of the [entity-component-system](https://en.wikipedia.org/wiki/Entity_component_system) design pattern for entities in the world.
+
+So I set about drawing some simple 16x16 tiles for the world and some simple tree textures, then I jumped into code! I'm using [Love2D](https://love2d.org/) to create the simulator; I fell in _love_ with this Lua-based 2D game engine during my last project (a 2D space exploration game).
+
+The world is generated using a type of coherent noise called [Periln noise](https://en.wikipedia.org/wiki/Perlin_noise) (which Love provides a pre-made function for). I create several separate Perlin noise maps to represent: terrain height, tree cover, moisture, temperature and ground fertility. Biomes are then assigned according to certain rules, for example, dry low areas are deserts, wet areas with tree cover are jungles, etc.. The terrain height tapers off at the edges to make the map an island.
+
+Here's a sample of a generated world zoomed out:
+
+![A procedurally generated 2D map.](/blog/images/anarchy1/mapzoomedout.png =512x "Zoomed Out Map")
+
+It's a bit hard to see what's going on, so here's a close up.
+
+![A procedurally generated 2D map zoomed in.](/blog/images/anarchy1/mapzoomedin.png =720x "Zoomed In Map")
+
+Since I had the world sorted, I set about creating some dumb cims to populate it! I drew some simple cims.
+
+![A pixelart cim.](/blog/images/anarchy1/cim.png "A pixelart cim.")
+
+As previously noted, entities in the world use the entity-component-system design pattern. So I've given cims a "position" component, a "moveable" component and a "pathfinding" component. I then added some systems to operate on these components. First I have a "movement" system iterates over entities with "position" and "moveable" components and moves them to their next location if they have one, updatin the position as well. I then have a "pathfinder" system which works on entities with "pathfinding" and "moveable" components. It checks if there is a "target" set in the component and computes a path (useing [JPS pathfinding](https://en.wikipedia.org/wiki/Jump_point_search) - anoptimised version of [A*](https://en.wikipedia.org/wiki/A*_search_algorithm)), it then updates the "moveable" component's next position to follow the path.
+
+As it stands, cims still don't do anything! Nothing is giving them a target location to pathfind to, so I added a little "random walk" system which randomly assigns cims a target within 20 units of their current poisition, this makes them move!
+
+Here's a quick video of some cims walking around the world. I made trees pathable by separating environment features and creatures into 2 layers of the world. I didn't like the idea of a forest blocking the way, as people can walk through forests in real life!
+
+<video width="720" height="405" src="/blog/videos/anarchy1/cimwalk.mp4" controls>Your browser does not support the video tag.</video>
+
+Now I'm working on more entities (houses, farms, etc.) and some more interesting AI for the cims.
+
+The code is available on [GitHub](https://github.com/Abrasam/Anarchy).
