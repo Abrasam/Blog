@@ -1,0 +1,94 @@
+---
+title: Perilous
+date: 31/08/2021
+
+![Header](/blog/images/perilous/header.png =720x "Clearing biome with 2 players standing in it.")
+
+#### Introduction
+
+I've been working on this game for several years and not really shared with many people. However, I've decided to start putting it out there now that it's starting to take shape. I'd also like to put a note that my friend Pottow has been heavily involved with this project on the conceptual side, I don't want to take all the credit!
+
+Perilous has taken several forms over the years and, after repeatedly changing in form, scope and name, has finally settled on a particular direction. It's basically a very wacky 2D multiplayer survival game somewhat akin to a 2D version of Rust or DayZ (i.e. competative, post-apocalyptic, base-building and survival with much inter-group combat and rivalry). It wasn't always this, at various points it was a point and click adventure, a space exploration game, an island hopping survival game and a Don't Starve clone. After many iterations and failed ideas I decided to work out what the considerable library of assets and code I had racked up would be useful for and came up with the idea of this multiplayer survival game. It's not hugely original but it's a goal and it sounds to me like it could be quite fun - so I set about making it! It helps that I really like network code so the multiplayer bit really grasped me.
+
+The entire game is written in Lua using the [Love2D](https://love2d.org/) library. The assets are hand-drawn by myself and scanned in, for animations I used my [Harmonic Animation Editor](/blog/2021/01/03/harmonic-animation-editor/). I make no claim that my art is good, though to me the colourful goofiness is quite appealing.
+
+The game is still much a work in progress but I'm going to show off a few things that I've done so far.
+
+#### World
+
+Firstly, a few pictures of the various biomes. The world is generated using an infinite Voronoi tesselation where each cell is assigned a biome randomly based on weights. Eventually the world will be limited in size and surrounded by sea or some other impassable border to ensure that players stay near enough to eachother for combat to be commonplace.
+
+![Forest](/blog/images/perilous/oakforest.png =720x "Forest biome.")
+We have the deciduous forest.
+
+![Pine Forest](/blog/images/perilous/pineforest.png =720x "Pine forest biome.")
+The coniferous forest.
+
+![Clearing](/blog/images/perilous/clearing.png =720x "Clearing bione.")
+The grassy clearing.
+
+![Desert](/blog/images/perilous/desert.png =720x "Desert biome.")
+And the desert.
+
+![Desert border](/blog/images/perilous/border.png =720x "Desert border.")
+Note how the biomes fade into eachother gradually on the borders, I really like the borders with the forest myself.
+
+The world has a day/night cycle and a weather system, below is a quick video of the rain.
+
+<video width="720" height="405" src="/blog/videos/perilous/rain.mp4" controls>Your browser does not support the video tag.</video>
+
+#### Crafting and Gathering
+
+It's a survival game so obviously there's resource gathering and crafting, at the moment it's all fairly rudimentary. To craft you just press 'C' and all your recipe options appear. Eventually I'd like to have recipes learned by finding books in ruins and crafting done at some kind of station but it's early days at the moment.
+
+![Crafting](/blog/images/perilous/border.png =720x "Crafting menu.")
+
+Gathering is done by pressing 'F' when in range of a harvestable resource while holding the appropriate tool (the interact tooltip is red if you do not have the correct tool in your hand). Below is a quick video of me chopping down a tree.
+
+<video width="720" height="405" src="/blog/videos/perilous/treechop.mp4" controls>Your browser does not support the video tag.</video>
+
+#### Base Building and Farming
+
+And as mentioned there is base building and farming, this is very much WIP (it only got implemented yesterday) but I'll show you what I've got so far.
+
+You can build basic structures and place a few objects like campfires down.
+
+![Base](/blog/images/perilous/base.png =720x "A little house in the woods.")
+
+Farming is very simple at present, you can grow carrots using some fertiliser.
+
+![Farming](/blog/images/perilous/farm.gif =720x "Growing some carrots.")
+
+#### Combat
+
+Obviously if it's meant to be like Rust or DayZ there has to be combat, I've implemented a few basic weapons including a shotgun and a bow. Below are videos showing them in use.
+
+<video width="720" height="405" src="/blog/videos/perilous/shotgun.mp4" controls>Your browser does not support the video tag.</video>
+
+<video width="720" height="405" src="/blog/videos/perilous/bow.mp4" controls>Your browser does not support the video tag.</video>
+
+There's even a scary robot dog inspired by Black Mirror to fight.
+
+<video width="720" height="405" src="/blog/videos/perilous/doghunt.mp4" controls>Your browser does not support the video tag.</video>
+
+#### Multiplayer Features
+
+So the game wasn't originally multiplayer, I added this after I decided on the game's final form.
+
+We've got chat, Minecraft-like commands, and smooth real-time movement and combat. It needs a bit of optimisation here and there though - definitely a bit bandwidth heavy during some circumstances.
+
+![Chat](/blog/images/perilous/chat.png =720x "A screenshot of the game's chat.")
+
+#### Debug Screen
+
+I just want to show my debug screen for some reason, not sure why...
+
+![Debug](/blog/images/perilous/debug.png =720x "The debug screen showing lots of random metrics.")
+
+#### Future Plans
+
+So I aim to finish and release this game, no real timeline at present as it's very much a hobby project done in my free time. It's been going for years so I would kinda like to finish it within the year but I find that somewhat unlikely!
+
+Things I still need to add are the full crafting system, much more base building, land claiming, more weapons, ruins/monuments, more mobs and loads more I've either forgotten to mention or not yet thought of!
+
+I'll try and write about it on here semi-regularly for all the 0 people who read this! :P
