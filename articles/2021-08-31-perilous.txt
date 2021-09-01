@@ -4,7 +4,6 @@ date: 31/08/2021
 
 ![Header](/blog/images/perilous/header.png =720x "Clearing biome with 2 players standing in it.")
 
-#### Introduction
 
 I've been working on this game for several years and not really shared with many people. However, I've decided to start putting it out there now that it's starting to take shape. I'd also like to put a note that my friend Pottow has been heavily involved with this project on the conceptual side, I don't want to take all the credit!
 
